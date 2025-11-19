@@ -1,0 +1,482 @@
+@charset 'UTF-8';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ====================================== */
+/* 共通設定 */
+/* ====================================== */
+body {
+    font-size: var(--size_m);
+    line-height: 1;
+    color: var(--color_3);
+    font-family: var(--font_serif);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.center {
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+
+.bg_color {
+    background-color: var(--color_2);
+}
+
+/* ボタンデザイン */
+.btn {
+    display: block;
+    width: 90%;
+    line-height: 3;
+    margin: 40px auto;
+    background-color: var(--color_3);
+    color: #fff;
+    transition: 0.3s;
+}
+
+@media screen and (min-width: 600px) {
+    .btn {
+        max-width: 500px;
+    }
+    .btn:hover {
+        opacity: 0.7;
+        transition: 0.3s;
+    }
+}
+/* ========== min-width:600px ========== */
+
+/* ====================================== */
+/* ヘッダー */
+/* ====================================== */
+header {
+    background-color: #ffffff;
+    /* backdrop-filter: blur(5px); */
+    width: 100%;
+    height: 70px;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* ロゴ・ナビ・ハンバーガーを横並び */
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ロゴ */
+.logo {
+    display: block;
+    width: 150px;
+    line-height: 70px;
+}
+
+.logo_box a {
+    display: block;
+    height: 70px;
+}
+
+/* SNSアイコン */
+.icon_box {
+    display: flex;
+    gap: 16px;
+    /* 横方向中央 */
+    justify-content: center;
+}
+
+.icon_box img {
+    width: 25px;
+    /* 縦方向中央 */
+    height: 70px;
+}
+
+/* ナビ -------------------------*/
+.header_inner nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--color_1);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 10;
+    /* mix-blend-mode: difference; */
+}
+
+.header_inner nav li {
+    font-size: var(--size_l);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
+}
+
+.header_inner nav li a {
+    display: block;
+}
+.on.header_inner nav {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+}
+
+@media screen and (min-width: 960px) {
+    header {
+        padding-top: 0;
+    }
+
+    .header_inner {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* sp用の要素を非表示 */
+    .header_inner .hum,
+    .header_inner .nav_home {
+        display: none;
+    }
+
+    .logo_box {
+        width: 200px;
+    }
+
+    .logo_box h1 {
+        padding-top: 0.5rem;
+    }
+
+    .header_inner nav {
+        position: static;
+        background-color: transparent;
+        height: auto;
+        padding-top: 0;
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s;
+    }
+
+    .header_inner nav ul {
+        display: flex;
+        padding-left: 300px;
+    }
+
+    .header_inner nav ul li {
+        font-size: var(--size_m);
+        padding-top: 0.8rem;
+        /* border: 1px solid red; */
+    }
+
+    .header_inner nav ul li a {
+        width: 100%;
+    }
+}
+
+/* ========== min-width:600px ========== */
+
+/* ハンバーガーメニュー  -------------------------*/
+.header_inner .hum {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.header_inner .hum span {
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: var(--color_3);
+    transition: 0.3s;
+
+    /* 下に隠れないように */
+    position: fixed;
+    z-index: 20;
+}
+
+/* OFF */
+.header_inner .hum span:nth-child(1) {
+    transform: translateY(8px);
+    transition: 0.3s;
+}
+
+.header_inner .hum span:nth-child(2) {
+    transform: translateY(23px);
+    transition: 0.3s;
+}
+
+.header_inner .hum span:nth-child(3) {
+    transform: translateY(38px);
+    transition: 0.3s;
+}
+
+/* ON */
+.on.header_inner .hum span:nth-child(1) {
+    transform: translateY(23px) rotate(-45deg);
+    transition: 0.3s;
+}
+
+.on.header_inner .hum span:nth-child(2) {
+    display: none;
+    transition: 0.3s;
+}
+
+.on.header_inner .hum span:nth-child(3) {
+    transform: translateY(23px) rotate(45deg);
+    transition: 0.3s;
+}
+
+/* ハンバーガーメニューリンク  -------------------------*/
+.hum_link a {
+    display: block;
+    transition: 0.3s;
+}
+
+header nav.on {
+    display: none;
+    transition: 0.3s;
+}
+
+@media screen and (min-width: 600px) {
+    header nav.on {
+        display: block;
+        transition: 0.3s;
+    }
+}
+/* ========== min-width:600px ========== */
+
+/* ====================================== */
+/* セクション共通 */
+/* ====================================== */
+section {
+    background-color: #fff;
+    padding-bottom: 80px;
+}
+
+section .anime_box {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    section {
+        padding-bottom: 80px;
+    }
+}
+/* ========== min-width:px ========== */
+section .anime_box h2 {
+    font-size: var(--size_ll);
+}
+
+section .anime_box p {
+    font-size: var(--size_ml);
+}
+
+section .sect_inner {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section .desc {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+section .desc p {
+    margin-bottom: 16px;
+}
+
+/* view More --------------------------*/
+.page_link {
+    line-height: 2;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: var(--color_3);
+    border-bottom: 2px;
+}
+
+a.page_link {
+    position: relative;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.page_link span {
+    padding-left: 20px;
+}
+
+a.page_link::before {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+
+    background: rgba(var(--color_rgb_3), 0.3);
+    bottom: -10px;
+    transform: scale(1, 1);
+    transform-origin: right top;
+    transition: transform 0.5s;
+}
+
+a.page_link::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1.5px;
+    background: var(--color_3);
+    bottom: -10px;
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.5s;
+}
+
+@media screen and (min-width: 600px) {
+    a.page_link:hover::after {
+        transform: scale(1, 1);
+        transform-origin: left top;
+    }
+}
+
+/* ========== min-width:600px ========== */
+/* view More --------------------------*/
+
+section .image {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 600px) {
+    section .anime_box {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    section .anime_box h2 {
+        font-size: var(--size_xl);
+    }
+
+    section .anime_box p {
+        font-size: var(--size_l);
+    }
+
+    section .desc {
+        padding-bottom: 0;
+    }
+
+    section .sect_inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section .reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+/* ========== min-width:600px ========== */
+
+/* セクションタイトルの1文字ずつ浮き上がるアニメーション */
+.anime-up.displayed span {
+    animation: showText 1s backwards;
+    display: inline-block;
+}
+
+.anime-up.displayed > span {
+    overflow: hidden;
+}
+
+.anime-up.displayed > span > span {
+    animation: showTextFromBottom 1s backwards;
+}
+
+@keyframes showTextFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* ====================================== */
+/* footer */
+/* ====================================== */
+footer {
+    background-color: var(--color_1);
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    margin-top: 80px;
+}
+
+.footer_inner {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer_inner nav ul li {
+    padding: 8px;
+}
+
+.footer_inner .logo_box,
+.footer_inner .logo_box img {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 16px;
+    width: 200px;
+}
+@media screen and (min-width: 600px) {
+    .footer_inner .nav_home {
+        display: none;
+    }
+}
+/* ========== min-width:600px ========== */

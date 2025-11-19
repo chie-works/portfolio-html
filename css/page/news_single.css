@@ -1,0 +1,60 @@
+/* ====================================== */
+/* 個別ページレイアウト */
+/* ====================================== */
+.news_under {
+    margin-top: 70px;
+    text-align: center;
+}
+.news_under h1 {
+    padding: 40px;
+    font-size: var(--size_ll);
+}
+
+.news_under_box {
+    margin-bottom: 80px;
+}
+.news_under_box .news_text {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 40px;
+}
+.news_under_box div p {
+    padding-bottom: 20px;
+}
+.news_under_box div .tel_icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 16px;
+}
+
+.news_under_box .reserve_tel {
+    display: flex;
+    padding-top: 40px;
+    align-items: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 600px) {
+    .news_under {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .news_under_box {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 80px;
+    }
+
+    .news_under img {
+        width: 400px;
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+/* ========== min-width:600px ========== */

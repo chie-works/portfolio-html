@@ -1,0 +1,70 @@
+@charset 'UTF-8';
+
+/* ----------------- */
+/* Z-indexの管理 */
+/* ----------------- */
+/* 
+-1  :キービジュアル(mv)
+10  :ヘッダー
+10  :ハンバーガーメニュー（nav）
+20  :ハンバーガーメニュー（span）
+ */
+
+:root {
+    /* font */
+    --font_sans: "Noto Sans JP", sans-serif;
+    --font_serif: "Noto Serif JP", serif;
+    --size_s: 12px;
+    --size_m: 16px;
+    --size_l: 24px;
+    --size_ll: 32px;
+    --size_xl: 48px;
+
+    /* color */
+    /* --color_1: #9f9460;
+    --color_2: #eff0f0;
+    --color_3: #31371b;
+    --color_rgb_1: 159, 148, 96;
+    --color_rgb_2: 239, 240, 240;
+    --color_rgb_3: 49, 55, 27; */
+
+    /* color */
+    /* --color_1: #aa4d53;
+    --color_2: #f7f6f6;
+    --color_3: #4c2f3b;
+    --color_rgb_1: 170, 77, 83;
+    --color_rgb_2: 247, 246, 246;
+    --color_rgb_3: 76, 47, 59; */
+
+    /* color */
+    /* --color_1: #627962;
+    --color_2: #f1eceb;
+    --color_3: #363427;
+    --color_rgb_1: 98, 121, 98;
+    --color_rgb_2: 241, 236, 235;
+    --color_rgb_3: 54, 52, 39; */
+
+    /* color */
+    /* --color_1: #a6b5a5;
+    --color_2: #f4ebda;
+    --color_3: #262724;
+    --color_rgb_1: 166, 181, 165;
+    --color_rgb_2: 244, 235, 218;
+    --color_rgb_3: 38, 39, 36; */
+
+    /* color */
+    /* --color_1: #365c3b;
+    --color_2: #fff3e7;
+    --color_3: #43311f;
+    --color_rgb_1: 54, 92, 59;
+    --color_rgb_2: 255, 243, 231;
+    --color_rgb_3: 67, 49, 31; */
+
+    /* color */
+    --color_1: #746f57;
+    --color_2: #f9f9f8;
+    --color_3: #2e2214;
+    --color_rgb_1: 116, 111, 87;
+    --color_rgb_2: 249, 249, 248;
+    --color_rgb_3: 46, 34, 20;
+}

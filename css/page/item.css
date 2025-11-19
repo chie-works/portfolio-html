@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+/* ========================== */
+/* ITEM */
+/* ========================== */
+.item_box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.item_box figure {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.item_box figure figcaption {
+    line-height: 2;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    .item_box {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+    .item_box .img_box {
+        overflow: hidden;
+    }
+    .item_box figure img:hover {
+        transform: scale(1.3);
+        transition: 0.5s;
+    }
+}
+/* ========== min-width:600px ========== */
